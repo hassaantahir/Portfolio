@@ -5,11 +5,27 @@
         <link href="index.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
+        <div id="loader" class="center"></div>
         <div id="particles-js"></div> 
         <div class="wrapper">
             <h1>Comming Soon</h1>
         </div>
         <script src="particles.js"></script>
         <script src="app.js"></script>
+        <script>
+            document.onreadystatechange = function() {
+                if (document.readyState !== "complete") {
+                    document.querySelector(
+                      "body").style.visibility = "hidden";
+                    document.querySelector(
+                      "#loader").style.visibility = "visible";
+                } else {
+                    document.querySelector(
+                      "#loader").style.display = "none";
+                    document.querySelector(
+                      "body").style.visibility = "visible";
+                }
+            };
+        </script>
     </body>
 </html>
